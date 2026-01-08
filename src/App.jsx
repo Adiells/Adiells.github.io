@@ -19,15 +19,20 @@ function App() {
   }, []);
 
   return (
-    <main className="hero-gate">
-      <div className="glass-panel">
-        <p className="eyebrow">Bem-vindo</p>
-        <h1 className="gate-title">Olá, eu sou Adiel</h1>
-        <p className="gate-subtitle">Confira meu portfólio e trabalhos.</p>
-        <button className="cta-btn" onClick={go}>Veja meu portfólio</button>
-        <p className="gate-hint">{hint}</p>
-      </div>
-    </main>
+    <>
+      <main className="hero-gate">
+        <div className="glass-panel">
+          <p className="eyebrow">Bem-vindo</p>
+          <h1 className="gate-title">Olá, eu sou Adiel</h1>
+          <p className="gate-subtitle">Confira meu portfólio e trabalhos.</p>
+          <button className="cta-btn" onClick={go}>Veja meu portfólio</button>
+          <p className="gate-hint">{hint}</p>
+        </div>
+      </main>
+      <footer className="site-footer" aria-label="Rodapé">
+        <small>Adiel Emilson — todos os direitos reservados</small>
+      </footer>
+    </>
   );
 }
 
