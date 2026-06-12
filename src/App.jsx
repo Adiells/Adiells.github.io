@@ -35,7 +35,7 @@ function App() {
               Hi, I'm <span>Adiel Emilson</span>
             </h1>
             <p className="hero-location">Brazil • Data Science & AI Student @ UFPB</p>
-            <h2 className="typing-line">Data Scientist • AI Student • Computer Vision</h2>
+            <h2 className="typing-line">Data Science & AI Student • Computer Vision</h2>
             <p className="hero-description">
               I transform complex data into intelligent solutions. My work focuses on
               <strong> machine learning</strong>, <strong>artificial intelligence</strong>,
