@@ -11,6 +11,7 @@
     "deploy:gh": "vite build && gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
