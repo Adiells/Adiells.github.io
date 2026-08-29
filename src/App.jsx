@@ -68,7 +68,7 @@ function App() {
 
           <div className="hero-image-col">
             <div className="editorial-image-frame">
-              <img src="/eu.png" alt="Adiel Emilson" className="editorial-photo" />
+              <img src="/eu.webp" alt="Adiel Emilson" className="editorial-photo" />
               <div className="frame-border-corner top-left"></div>
               <div className="frame-border-corner top-right"></div>
               <div className="frame-border-corner bottom-left"></div>
@@ -135,7 +135,7 @@ function App() {
       <footer className="main-footer" aria-label="Rodapé">
         <div className="footer-container">
           <p>
-            © {new Date().getFullYear()} <span>Adiel Emilson</span>. Built with React & Vite.
+            © {new Date().getFullYear()} <span>Adiel Emilson</span>. 
           </p>
           <small>Data Science • Artificial Intelligence • Machine Learning • Computer Vision</small>
         </div>
