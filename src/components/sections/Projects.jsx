@@ -88,7 +88,7 @@ function ProjectItem({ project }) {
               >
                 <span className={styles.repoPrompt}>❯</span>
                 <span className={styles.repoCmd}>git clone</span>
-                <span className={styles.repoUrl}>{project.link}</span>
+                <span className={styles.repoUrl}>{project.link.length > 51 ? project.link.slice(0, 51).concat("...") : project.link}</span>
               </a>
             </div>
           </div>
