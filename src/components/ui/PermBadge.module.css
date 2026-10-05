@@ -1,0 +1,30 @@
+.badge {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.05em;
+  user-select: none;
+  display: inline-block;
+}
+
+.dir {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.read {
+  color: var(--yellow);
+}
+
+.write {
+  color: var(--red);
+}
+
+.exec {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.dash {
+  color: var(--comment);
+  opacity: 0.6;
+}

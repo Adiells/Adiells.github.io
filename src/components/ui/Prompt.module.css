@@ -1,0 +1,47 @@
+.promptContainer {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-base);
+  user-select: none;
+}
+
+.userHost {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.path {
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+.branchWrapper {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.branchOn {
+  color: var(--comment);
+}
+
+.branchName {
+  color: var(--pink);
+  font-weight: 500;
+}
+
+.arrow {
+  font-weight: 700;
+  margin-left: 0.1rem;
+}
+
+.arrowSuccess {
+  color: var(--green);
+}
+
+.arrowError {
+  color: var(--red);
+}

@@ -1,0 +1,40 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  background: var(--bg-dark);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--fg);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.button:hover {
+  border-color: var(--purple);
+  background: var(--bg-darker);
+  transform: translateY(-1px);
+}
+
+.prefix {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.cmd {
+  color: var(--fg);
+  font-weight: 500;
+}
+
+.primary {
+  border-color: var(--purple);
+  background: rgba(189, 147, 249, 0.1);
+}
+
+.primary:hover {
+  background: rgba(189, 147, 249, 0.2);
+}

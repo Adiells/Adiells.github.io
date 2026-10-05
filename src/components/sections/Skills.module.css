@@ -1,0 +1,80 @@
+.skills {
+  margin-bottom: var(--space-section);
+  font-family: var(--font-mono);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.treePane {
+  height: 100%;
+}
+
+.groupDesc {
+  color: var(--comment);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-prose);
+  margin-bottom: 1rem;
+}
+
+.treeContainer {
+  background: var(--bg-darker);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  font-size: var(--fs-sm);
+}
+
+.treeRoot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.dirIcon {
+  font-size: 0.85rem;
+}
+
+.dirName {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.treeItems {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+}
+
+.treeRow {
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+}
+
+.branchSymbol {
+  color: var(--comment);
+  user-select: none;
+  font-family: var(--font-mono);
+}
+
+.fileName {
+  color: var(--fg);
+  margin-left: 2px;
+}
+
+.treeSummary {
+  margin-top: 1rem;
+  text-align: right;
+  font-size: var(--fs-xs);
+  color: var(--comment);
+}
+
+.summaryText {
+  color: var(--green);
+  font-weight: 700;
+}

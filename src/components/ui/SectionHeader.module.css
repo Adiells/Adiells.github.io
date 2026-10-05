@@ -1,0 +1,48 @@
+.header {
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+}
+
+.comment {
+  color: var(--comment);
+  font-size: var(--fs-xs);
+  margin-bottom: 0.35rem;
+  user-select: none;
+}
+
+.commandLine {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.commandLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--fg);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.commandLink:hover {
+  color: var(--yellow);
+}
+
+.commandText {
+  letter-spacing: -0.02em;
+}
+
+.cursor {
+  color: var(--green);
+  margin-left: 2px;
+  animation: blink 0.8s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

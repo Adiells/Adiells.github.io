@@ -1,0 +1,202 @@
+.statusBar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--bar-h);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+  font-family: var(--font-mono);
+}
+
+.container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wmBadge {
+  background: var(--green);
+  color: var(--bg-darker);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.05em;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.wsButton {
+  padding: 0.25rem 0.6rem;
+  font-size: var(--fs-xs);
+  color: var(--comment);
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.wsButton:hover {
+  color: var(--fg);
+  background: var(--bg-dark);
+}
+
+.wsActive {
+  color: var(--fg);
+  background: var(--line);
+  font-weight: 700;
+  border-bottom: 2px solid var(--purple);
+}
+
+.mobileCurrent {
+  display: none;
+  font-size: var(--fs-xs);
+  color: var(--cyan);
+}
+
+.mobilePath {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.shellButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.55rem;
+  background: var(--bg-dark);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  color: var(--fg);
+  transition: all 0.15s ease;
+}
+
+.shellButton:hover {
+  border-color: var(--purple);
+  background: var(--bg-darker);
+}
+
+.shellGlyph {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.shellLabel {
+  color: var(--fg);
+}
+
+.hotkey {
+  background: var(--bg-darker);
+  border: 1px solid var(--line);
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+  font-size: 0.65rem;
+  color: var(--comment);
+}
+
+.clock {
+  font-size: var(--fs-xs);
+  color: var(--comment);
+}
+
+.mobileMenuBtn {
+  display: none;
+  font-size: var(--fs-md);
+  color: var(--fg);
+  padding: 0.25rem;
+}
+
+/* Mobile Drawer */
+.mobileDrawer {
+  position: absolute;
+  top: var(--bar-h);
+  left: 0;
+  width: 100%;
+  background: var(--bg-darker);
+  border-bottom: 1px solid var(--line);
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.mobileDrawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+  color: var(--comment);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.closeBtn {
+  color: var(--comment);
+  font-size: var(--fs-sm);
+}
+
+.mobileWsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobileWsItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-dark);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  color: var(--fg);
+  text-align: left;
+}
+
+.mobileWsItemActive {
+  border-left: 3px solid var(--purple);
+  background: var(--line);
+}
+
+.mobileWsTitle {
+  color: var(--comment);
+  font-size: var(--fs-xs);
+}
+
+@media (max-width: 768px) {
+  .workspaces {
+    display: none;
+  }
+  .mobileCurrent {
+    display: block;
+  }
+  .mobileMenuBtn {
+    display: block;
+  }
+  .hotkey {
+    display: none;
+  }
+}

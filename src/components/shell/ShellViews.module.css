@@ -1,0 +1,164 @@
+.outputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+}
+
+.emptyState {
+  color: var(--comment);
+  font-size: var(--fs-xs);
+  padding: 0.5rem 0;
+}
+
+.highlight {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.entryBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.promptEcho {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: var(--fs-xs);
+}
+
+.user { color: var(--purple); font-weight: 700; }
+.path { color: var(--cyan); }
+.arrow { font-weight: 700; }
+.arrowSuccess { color: var(--green); }
+.arrowError { color: var(--red); }
+.inputEcho { color: var(--fg); font-weight: 700; }
+
+.outputBody {
+  padding-left: 0.5rem;
+  border-left: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rawText {
+  color: var(--fg);
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.errorText {
+  color: var(--red);
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.helpTable {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.helpHeader {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  font-weight: 700;
+  color: var(--comment);
+  border-bottom: 1px dashed var(--line);
+  padding-bottom: 0.25rem;
+}
+
+.helpRow {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0.5rem;
+}
+
+.helpCmd {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.helpDesc {
+  color: var(--fg);
+}
+
+.manPage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.manSection {
+  color: var(--purple);
+  font-weight: 700;
+  margin-top: 0.4rem;
+}
+
+.manText {
+  color: var(--fg);
+  padding-left: 0.5rem;
+}
+
+.lsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lsRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.lsUser { color: var(--purple); }
+.lsCategory { color: var(--pink); }
+.lsYear { color: var(--comment); }
+.lsName { color: var(--cyan); font-weight: 700; }
+
+.lsFilesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.lsFileItem {
+  color: var(--fg);
+}
+
+.lsDir {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.historyRow {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.historyNum {
+  color: var(--comment);
+  min-width: 25px;
+}
+
+.historyCmd {
+  color: var(--fg);
+}

@@ -1,0 +1,41 @@
+:root {
+  /* Dracula Theme Palette */
+  --bg: #282a36;
+  --bg-dark: #21222c;
+  --bg-darker: #191a21;
+  --bg-glass: rgba(40, 42, 54, 0.85);
+  --line: #44475a;
+  --line-light: #6272a4;
+  
+  --fg: #f8f8f2;
+  --comment: #6272a4;
+  
+  --cyan: #8be9fd;
+  --green: #50fa7b;
+  --orange: #ffb86c;
+  --pink: #ff79c6;
+  --purple: #bd93f9;
+  --red: #ff5555;
+  --yellow: #f1fa8c;
+
+  /* Typography & Sizing */
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.8125rem;
+  --fs-base: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.35rem;
+  --fs-2xl: 1.75rem;
+  
+  --lh-code: 1.5;
+  --lh-prose: 1.7;
+  --measure: 72ch;
+  
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  
+  --bar-h: 42px;
+  --space-section: clamp(3.5rem, 7vw, 6rem);
+}

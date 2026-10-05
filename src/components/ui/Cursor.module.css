@@ -1,0 +1,14 @@
+.cursor {
+  display: inline-block;
+  color: var(--green);
+  font-weight: 700;
+  line-height: 1;
+  animation: blink 1s step-start infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

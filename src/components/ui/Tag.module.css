@@ -1,0 +1,26 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  padding: 0.2rem 0.5rem;
+  background: var(--bg-darker);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--fg);
+  user-select: none;
+  transition: border-color 0.15s ease;
+}
+
+.tag:hover {
+  border-color: var(--comment);
+}
+
+.prefix {
+  color: var(--pink);
+  margin-right: 1px;
+}
+
+.label {
+  color: var(--fg);
+}

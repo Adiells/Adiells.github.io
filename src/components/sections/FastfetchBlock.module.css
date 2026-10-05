@@ -1,0 +1,109 @@
+.fastfetch {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+}
+
+.logoCol {
+  user-select: none;
+}
+
+.asciiLogo {
+  color: var(--green);
+  font-family: inherit;
+  font-size: 1.1rem;
+  line-height: 1.15;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(80, 250, 123, 0.2);
+}
+
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.userHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.userHost {
+  color: var(--green);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+}
+
+.divider {
+  color: var(--comment);
+  opacity: 0.6;
+}
+
+.specsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.specRow {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.specKey {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.specVal {
+  color: var(--fg);
+}
+
+.palette {
+  display: flex;
+  gap: 6px;
+  margin-top: 0.75rem;
+}
+
+.palette span {
+  width: 18px;
+  height: 10px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.swatchBlack { background: var(--bg-darker); }
+.swatchRed { background: var(--red); }
+.swatchGreen { background: var(--green); }
+.swatchYellow { background: var(--yellow); }
+.swatchPurple { background: var(--purple); }
+.swatchPink { background: var(--pink); }
+.swatchCyan { background: var(--cyan); }
+.swatchWhite { background: var(--fg); }
+
+/* Compact mode for shell view */
+.compact {
+  gap: 1.25rem;
+  font-size: 0.7rem;
+}
+
+.compact .asciiLogo {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .fastfetch {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .logoCol {
+    display: none;
+  }
+}
