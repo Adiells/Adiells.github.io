@@ -114,7 +114,7 @@ export const projects = [
     slug: 'neuroevolution-snake',
     title: 'Neuroevolution Snake',
     category: 'AI',
-    year: '2025',
+    year: '2026',
     permissions: 'drwxr-xr-x',
     highlight: 'Snake agent trained with a genetic algorithm',
     description:
