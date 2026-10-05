@@ -162,3 +162,24 @@
 .historyCmd {
   color: var(--fg);
 }
+
+@media (max-width: 600px) {
+  .helpHeader {
+    display: none;
+  }
+  .helpRow {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dashed rgba(98, 114, 164, 0.2);
+  }
+  .helpDesc {
+    padding-left: 0.5rem;
+    color: var(--comment);
+  }
+  .lsRow {
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+  }
+}
+

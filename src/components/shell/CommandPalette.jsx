@@ -98,6 +98,7 @@ export function CommandPalette({
             path="~/portfolio"
             branch=""
             exitCode={terminal.lastExitCode}
+            compact={true}
           />
           <input
             ref={inputRef}

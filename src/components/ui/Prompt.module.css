@@ -6,16 +6,20 @@
   font-family: var(--font-mono);
   font-size: var(--fs-base);
   user-select: none;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .userHost {
   color: var(--purple);
   font-weight: 700;
+  word-break: break-all;
 }
 
 .path {
   color: var(--cyan);
   font-weight: 500;
+  word-break: break-all;
 }
 
 .branchWrapper {
@@ -45,3 +49,24 @@
 .arrowError {
   color: var(--red);
 }
+
+@media (max-width: 480px) {
+  .promptContainer {
+    font-size: var(--fs-sm);
+    gap: 0.35rem;
+  }
+}
+
+/* Compact mode for tight spaces (like the mobile shell input bar) */
+@media (max-width: 640px) {
+  .compact .userHost {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .compact .path {
+    display: none;
+  }
+}
+

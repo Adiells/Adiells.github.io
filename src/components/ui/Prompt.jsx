@@ -1,9 +1,17 @@
 import React from 'react';
 import styles from './Prompt.module.css';
 
-export function Prompt({ user = 'adiel', host = 'manjaro-linux', path = '~/portfolio', branch = 'master', exitCode = 0, className = '' }) {
+export function Prompt({
+  user = 'adiel',
+  host = 'manjaro-linux',
+  path = '~/portfolio',
+  branch = 'master',
+  exitCode = 0,
+  compact = false,
+  className = '',
+}) {
   return (
-    <div className={`${styles.promptContainer} ${className}`}>
+    <div className={`${styles.promptContainer} ${compact ? styles.compact : ''} ${className}`}>
       <span className={styles.userHost}>{user}@{host}</span>
       <span className={styles.path}>{path}</span>
       {branch && (

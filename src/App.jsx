@@ -51,7 +51,7 @@ function App() {
       />
 
       {/* Main Single Page Content */}
-      <main className="main-layout" style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem 1.25rem' }}>
+      <main className="main-layout">
         <Hero
           profile={profile}
           system={system}
