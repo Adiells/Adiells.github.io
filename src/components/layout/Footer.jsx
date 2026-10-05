@@ -16,7 +16,7 @@ export function Footer({ user = 'adiel', host = 'manjaro-linux' }) {
         <div className={styles.metaLine}>
           <span>© {new Date().getFullYear()} Adiel Emilson.</span>
           <span className={styles.separator}>•</span>
-          <span>Designed with React & Vite on Manjaro Linux.</span>
+          <span>All Rights Reserved. </span>
         </div>
       </div>
     </footer>
