@@ -1,6 +1,32 @@
 import { profile, socials, skills, projects } from '../data/portfolioData.js';
 
 export function getVirtualFiles() {
+  const projectEntries = {};
+  projects.forEach((p) => {
+    const lines = [
+      `# ${p.title} (${p.year})`,
+      `Category: ${p.category}`,
+      `Highlight: ${p.highlight || ''}`,
+      '',
+      p.description,
+      '',
+      `Stack: ${p.tools.join(', ')}`,
+    ];
+    if (p.link) {
+      lines.push(`Link: ${p.link}`);
+    }
+    if (p.repo) {
+      lines.push(`Repository: ${p.repo}`);
+    }
+
+    projectEntries[`projects/${p.slug}.md`] = {
+      name: `${p.slug}.md`,
+      type: 'file',
+      permissions: p.permissions || '-rw-r--r--',
+      content: lines.join('\n'),
+    };
+  });
+
   return {
     'about.txt': {
       name: 'about.txt',
@@ -48,6 +74,7 @@ export function getVirtualFiles() {
       permissions: 'drwxr-xr-x',
       children: projects.map((p) => `${p.slug}.md`),
     },
+    ...projectEntries,
     '.zshrc': {
       name: '.zshrc',
       type: 'file',

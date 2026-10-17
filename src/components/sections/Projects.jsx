@@ -8,7 +8,11 @@ import styles from './Projects.module.css';
 function ProjectItem({ project }) {
   const asset = (fileName) => `${import.meta.env.BASE_URL}${fileName}`;
   const videoRef = useRef(null);
-  const [videoError, setVideoError] = useState(false);
+  const [mediaError, setMediaError] = useState(false);
+
+  useEffect(() => {
+    setMediaError(false);
+  }, [project.media]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -27,7 +31,9 @@ function ProjectItem({ project }) {
 
     observer.observe(video);
     return () => observer.disconnect();
-  }, []);
+  }, [project.media]);
+
+  const isLinkGit = Boolean(project.link && project.link.includes('github.com'));
 
   return (
     <div className={styles.projectCard} id={`project-${project.slug}`}>
@@ -38,22 +44,31 @@ function ProjectItem({ project }) {
         <div className={styles.projectGrid}>
           {/* Media preview */}
           <div className={styles.mediaSide}>
-            {project.media && !videoError ? (
+            {project.media && !mediaError ? (
               <div className={styles.videoFrame}>
-                <video
-                  ref={videoRef}
-                  src={asset(project.media)}
-                  className={styles.video}
-                  muted
-                  loop
-                  playsInline
-                  preload="none"
-                  onError={() => setVideoError(true)}
-                />
+                {project.mediaType === 'image' ? (
+                  <img
+                    src={asset(project.media)}
+                    alt={project.title}
+                    className={styles.mediaImage}
+                    onError={() => setMediaError(true)}
+                  />
+                ) : (
+                  <video
+                    ref={videoRef}
+                    src={asset(project.media)}
+                    className={styles.video}
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    onError={() => setMediaError(true)}
+                  />
+                )}
               </div>
             ) : (
               <div className={styles.placeholderMedia}>
-                <span>[No video preview]</span>
+                <span>{project.media ? `[Preview: ${project.media}]` : '[No video preview]'}</span>
               </div>
             )}
           </div>
@@ -80,16 +95,30 @@ function ProjectItem({ project }) {
             </div>
 
             <div className={styles.actionsRow}>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className={styles.repoLink}
-              >
-                <span className={styles.repoPrompt}>❯</span>
-                <span className={styles.repoCmd}>git clone</span>
-                <span className={styles.repoUrl}>{project.link}</span>
-              </a>
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.repoLink}
+                >
+                  <span className={styles.repoPrompt}>❯</span>
+                  <span className={styles.repoCmd}>{isLinkGit ? 'git clone' : 'open'}</span>
+                  <span className={styles.repoUrl}>{project.link}</span>
+                </a>
+              )}
+              {project.repo && project.repo !== project.link && (
+                <a
+                  href={project.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.repoLink}
+                >
+                  <span className={styles.repoPrompt}>❯</span>
+                  <span className={styles.repoCmd}>git clone</span>
+                  <span className={styles.repoUrl}>{project.repo}</span>
+                </a>
+              )}
             </div>
           </div>
         </div>

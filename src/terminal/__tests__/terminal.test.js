@@ -53,6 +53,16 @@ describe('Terminal Autocomplete Engine', () => {
     });
     expect(result.input).toBe('open neuroevolution-snake ');
   });
+
+  it('completes argument for open with music2chart', () => {
+    const result = completeInput('open mus', {
+      commandNames: ['open'],
+      sections: ['home', 'projects'],
+      projectSlugs: ['music2chart', 'neuroevolution-snake'],
+      files: ['about.txt', 'projects/music2chart.md'],
+    });
+    expect(result.input).toBe('open music2chart ');
+  });
 });
 
 describe('Command Execution Engine', () => {
@@ -69,6 +79,20 @@ describe('Command Execution Engine', () => {
     const res = executeCommand('whoami', context);
     expect(res.exitCode).toBe(0);
     expect(res.effects.some((e) => e.type === 'scrollTo' && e.id === 'about')).toBe(true);
+  });
+
+  it('executes open music2chart and returns scrollTo and highlight effects', () => {
+    const res = executeCommand('open music2chart', context);
+    expect(res.exitCode).toBe(0);
+    expect(res.output[0].text).toContain('Music2Chart');
+    expect(res.effects.some((e) => e.type === 'highlight' && e.slug === 'music2chart')).toBe(true);
+  });
+
+  it('executes cat projects/music2chart.md and displays project markdown', () => {
+    const res = executeCommand('cat projects/music2chart.md', context);
+    expect(res.exitCode).toBe(0);
+    expect(res.output[0].text).toContain('Music2Chart');
+    expect(res.output[0].text).toContain('PyTorch');
   });
 
   it('executes help and lists commands', () => {

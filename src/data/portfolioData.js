@@ -111,6 +111,22 @@ export const experiences = [
 
 export const projects = [
   {
+    slug: 'music2chart',
+    title: 'Music2Chart',
+    category: 'AI',
+    year: '2026',
+    permissions: '-rwxr-xr-x',
+    highlight: 'AI Clone Hero & YARG Chart Generator with 3D Highway Preview',
+    description:
+      'Deep learning system that converts audio into Clone Hero and YARG rhythm game charts (.chart / .sng). Utilizes PyTorch neural networks and audio signal processing for beat tracking, onset detection, and automated note transcription, coupled with a real-time 3D Highway visualizer.',
+    tools: ['PyTorch', 'Python', 'Audio DSP', 'Deep Learning', 'Neural Networks'],
+    icon: 'Brain',
+    mediaType: 'video',
+    media: 'music2chart.webm',
+    link: 'https://music2chart.adiels.me/',
+    repo: 'https://github.com/Adiells/music2chart',
+  },
+  {
     slug: 'neuroevolution-snake',
     title: 'Neuroevolution Snake',
     category: 'AI',

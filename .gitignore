@@ -40,3 +40,6 @@ coverage/
 *.br
 
 # NOTE: Do NOT ignore docs/ — used for GitHub Pages deploy
+
+# Maestri orchestration files
+.maestri/
