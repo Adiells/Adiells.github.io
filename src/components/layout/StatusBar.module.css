@@ -159,6 +159,12 @@
   }
 }
 
+@media (min-width: 861px) {
+  .mobileDrawer {
+    display: none;
+  }
+}
+
 @media (max-width: 520px) {
   .container {
     gap: 0.75rem;
