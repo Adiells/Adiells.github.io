@@ -5,6 +5,33 @@ import styles from './Hero.module.css';
 
 const profileLinks = socials.filter((social) => social.id === 'github' || social.id === 'linkedin');
 
+const HIGHLIGHT = 'intelligent models';
+const NO_BREAK = 'high-performance';
+
+function renderPlain(text, styles) {
+  const idx = text.indexOf(NO_BREAK);
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <span className={styles.noBreak}>{NO_BREAK}</span>
+      {text.slice(idx + NO_BREAK.length)}
+    </>
+  );
+}
+
+function renderHeadline(text, styles) {
+  const idx = text.indexOf(HIGHLIGHT);
+  if (idx === -1) return renderPlain(text, styles);
+  return (
+    <>
+      {text.slice(0, idx)}
+      <span className={styles.highlight}>{HIGHLIGHT}</span>
+      {renderPlain(text.slice(idx + HIGHLIGHT.length), styles)}
+    </>
+  );
+}
+
 export function Hero({ profile, onNavigate }) {
   const asset = (fileName) => `${import.meta.env.BASE_URL}${fileName}`;
 
@@ -16,7 +43,7 @@ export function Hero({ profile, onNavigate }) {
           <span>Adiel Emilson · Data Science &amp; AI @ UFPB</span>
         </p>
 
-        <h1 className={styles.headline} id="hero-title">{profile.tagline}</h1>
+        <h1 className={styles.headline} id="hero-title">{renderHeadline(profile.tagline, styles)}</h1>
 
         <p className={styles.bio}>{profile.bio?.[0]}</p>
 
@@ -52,6 +79,8 @@ export function Hero({ profile, onNavigate }) {
             src={asset(profile.photo || 'eu.webp')}
             alt={profile.name}
             className={styles.portraitImg}
+            width="280"
+            height="280"
           />
         </div>
       </div>

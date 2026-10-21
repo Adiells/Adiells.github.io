@@ -1,6 +1,6 @@
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(200px, 0.65fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
   align-items: center;
   gap: clamp(2rem, 5vw, 3.5rem);
   width: 100%;
@@ -46,12 +46,20 @@
 }
 
 .headline {
-  max-width: 18ch;
-  margin-top: clamp(2.2rem, 4vw, 3rem);
+  max-width: 26ch;
+  margin-top: 1.25rem;
   color: var(--fg-primary);
-  font: 600 clamp(2.8rem, 5.4vw, 5.2rem)/1.02 var(--font-display);
-  letter-spacing: -0.06em;
+  font: 600 clamp(2.1rem, 3.6vw, 3.4rem)/1.1 var(--font-display);
+  letter-spacing: -0.035em;
   text-wrap: balance;
+}
+
+.highlight {
+  color: var(--accent-primary);
+}
+
+.noBreak {
+  white-space: nowrap;
 }
 
 .bio {
@@ -130,26 +138,30 @@
 }
 
 .portraitCol {
-  width: clamp(180px, 18vw, 220px);
-  height: clamp(180px, 18vw, 220px);
+  width: clamp(220px, 24vw, 280px);
   justify-self: end;
+  align-self: center;
 }
 
 .circularPortrait {
+  position: relative;
   width: 100%;
-  height: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  border: 1px solid var(--border-hairline);
   border-radius: 50%;
-  background: transparent;
-  border: 1.5px solid var(--border-hairline);
-  box-shadow: 0 0 0 6px var(--bg-surface), 0 16px 36px -12px rgba(0, 0, 0, 0.4);
+  background: var(--bg-surface);
+  box-shadow:
+    0 0 0 5px var(--bg-canvas),
+    0 0 0 6px color-mix(in srgb, var(--accent-primary) 30%, transparent),
+    0 18px 40px -16px rgb(0 0 0 / 40%);
 }
 
 .portraitImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
   display: block;
 }
 
@@ -161,20 +173,19 @@
 
   .portraitCol {
     order: -1;
-    width: 110px;
-    height: 110px;
-    justify-self: end;
+    width: 88px;
+    justify-self: start;
   }
 
   .headline {
-    max-width: 15ch;
-    font-size: clamp(2.75rem, 10vw, 4rem);
+    max-width: 18ch;
+    font-size: clamp(2rem, 7vw, 2.8rem);
   }
 }
 
 @media (max-width: 480px) {
   .headline {
-    font-size: clamp(2.35rem, 11vw, 3rem);
+    font-size: clamp(1.9rem, 8vw, 2.4rem);
   }
 
   .bio {
