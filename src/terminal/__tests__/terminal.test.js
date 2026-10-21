@@ -2,8 +2,93 @@ import { describe, it, expect } from 'vitest';
 import { tokenize, levenshtein, suggestCommand } from '../parser.js';
 import { longestCommonPrefix, completeInput } from '../completion.js';
 import { executeCommand } from '../commands/index.js';
-import { profile, system, projects, sections } from '../../data/portfolioData.js';
+import {
+  profile,
+  socials,
+  system,
+  projects,
+  experiences,
+  skills,
+  sections,
+  quickCommands,
+} from '../../data/portfolioData.js';
 import { getVirtualFiles } from '../files.js';
+
+describe('Portfolio Data Contract (Precision Engineering & R&D Lab)', () => {
+  it('exposes profile affiliations and focus areas', () => {
+    expect(profile.affiliations).toEqual(['UFPB', 'TAIL', 'Cortechx League', 'LASER Lab']);
+    expect(profile.focusAreas).toEqual([
+      'Deep Learning & Audio DSP',
+      'Computer Vision & Robotics',
+      'C++/Python Systems',
+    ]);
+    expect(Array.isArray(profile.bio)).toBe(true);
+    expect(profile.bio.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('defines structured architecture pipelines and flagship hierarchy for all projects', () => {
+    expect(projects.map((p) => p.slug)).toEqual([
+      'music2chart',
+      'neuroevolution-snake',
+      'structured-recommendation-system',
+    ]);
+
+    const flagship = projects.find((p) => p.slug === 'music2chart');
+    expect(flagship.flagship).toBe(true);
+    expect(
+      projects.filter((p) => p.slug !== 'music2chart').every((p) => p.flagship === false)
+    ).toBe(true);
+
+    for (const project of projects) {
+      expect(project.domain).toBeTruthy();
+      expect(project.role).toBeTruthy();
+      expect(Array.isArray(project.metrics)).toBe(true);
+      expect(project.metrics.length).toBeGreaterThan(0);
+      expect(project.architecture).toBeDefined();
+      expect(project.architecture.summary).toBeTruthy();
+      expect(project.architecture.nodes.map((n) => n.stage)).toEqual([
+        'INPUT / INGESTION',
+        'CORE ENGINE',
+        'OUTPUT / RUNTIME',
+      ]);
+    }
+  });
+
+  it('defines research lab experiences with id, domain, and active-voice descriptions', () => {
+    expect(experiences.map((e) => e.title)).toEqual(['TAIL', 'Cortechx League', 'LASER Lab']);
+    for (const exp of experiences) {
+      expect(exp.id).toBeTruthy();
+      expect(exp.domain).toBeTruthy();
+      expect(exp.description).toBeTruthy();
+    }
+  });
+
+  it('organizes skills into 3 capability layers (01..03)', () => {
+    expect(skills.map((s) => s.layer)).toEqual(['01', '02', '03']);
+    expect(skills.map((s) => s.title)).toEqual([
+      'Machine Learning & Computer Vision',
+      'High-Performance & Robotics Systems',
+      'Data Engineering & Interactive Interfaces',
+    ]);
+    for (const layer of skills) {
+      expect(layer.slug).toBeTruthy();
+      expect(layer.subtitle).toBeTruthy();
+      expect(layer.description).toBeTruthy();
+      expect(Array.isArray(layer.items)).toBe(true);
+      expect(layer.items.length).toBeGreaterThan(0);
+    }
+  });
+
+  it('defines clean engineering section labels (01..05) without bash commands', () => {
+    expect(sections.map((s) => s.index)).toEqual(['01', '02', '03', '04', '05']);
+    for (const sec of sections) {
+      expect(sec.label).not.toMatch(/ls -l|journalctl|cat |tree /);
+      expect(sec.title).not.toMatch(/ls -l|journalctl|cat |tree /);
+    }
+    expect(Array.isArray(socials)).toBe(true);
+    expect(Array.isArray(quickCommands)).toBe(true);
+  });
+});
 
 describe('Terminal Parser', () => {
   it('tokenizes simple strings', () => {

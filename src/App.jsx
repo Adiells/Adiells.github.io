@@ -5,13 +5,13 @@ import {
   projects,
   skills,
   experiences,
-  system,
   sections,
 } from './data/portfolioData.js';
 
 import { useActiveSection } from './hooks/useActiveSection.js';
 import { useSectionNav } from './hooks/useSectionNav.js';
 import { useHotkey } from './hooks/useHotkey.js';
+import { useTheme } from './hooks/useTheme.js';
 
 import { StatusBar } from './components/layout/StatusBar.jsx';
 import { Footer } from './components/layout/Footer.jsx';
@@ -26,10 +26,11 @@ import { CommandPalette } from './components/shell/CommandPalette.jsx';
 
 function App() {
   const [isShellOpen, setIsShellOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
   const activeSection = useActiveSection(sections.map((s) => s.id), 'home');
   const { scrollTo, highlight } = useSectionNav();
 
-  // Listen for Cmd+K, Ctrl+K or / to trigger shell
+  // Listen for Cmd+K, Ctrl+K, or / to open the command menu
   useHotkey(() => setIsShellOpen(true));
 
   const handleEffect = (effect) => {
@@ -42,22 +43,18 @@ function App() {
 
   return (
     <div className="portfolio-app">
-      {/* Top Status Bar (Waybar / Tmux Style) */}
       <StatusBar
         sections={sections}
         activeSection={activeSection}
         onSelectSection={scrollTo}
         onOpenShell={() => setIsShellOpen(true)}
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
 
-      {/* Main Single Page Content */}
       <main className="main-layout">
         <Hero
           profile={profile}
-          system={system}
-          projectsCount={projects.length}
-          labsCount={experiences.length}
-          skillsCount={skills.reduce((acc, g) => acc + g.items.length, 0)}
           onNavigate={scrollTo}
           onOpenShell={() => setIsShellOpen(true)}
         />
@@ -83,18 +80,16 @@ function App() {
         <Contact profile={profile} socials={socials} />
       </main>
 
-      {/* Terminal Process Exit Signature Footer */}
       <Footer user={profile.user} host={profile.host} />
 
-      {/* Interactive Command Palette Shell Modal */}
       <CommandPalette
         isOpen={isShellOpen}
         onClose={() => setIsShellOpen(false)}
-        profile={profile}
-        system={system}
         projects={projects}
         sections={sections}
         onEffect={handleEffect}
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
     </div>
   );

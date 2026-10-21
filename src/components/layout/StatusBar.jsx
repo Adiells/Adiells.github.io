@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { useClock } from '../../hooks/useClock.js';
+import {
+  CloseIcon,
+  CommandIcon,
+  MenuIcon,
+  MoonIcon,
+  SearchIcon,
+  SunIcon,
+} from '../ui/Icons.jsx';
 import styles from './StatusBar.module.css';
 
 export function StatusBar({
@@ -7,98 +14,80 @@ export function StatusBar({
   activeSection = 'home',
   onSelectSection,
   onOpenShell,
+  theme = 'dark',
+  onToggleTheme,
 }) {
-  const time = useClock();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   const handleSelect = (id) => {
-    if (onSelectSection) onSelectSection(id);
+    onSelectSection?.(id);
     setMobileMenuOpen(false);
   };
+  const ThemeIcon = theme === 'dark' ? SunIcon : MoonIcon;
+  const themeAction = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
 
   return (
-    <nav className={styles.statusBar} aria-label="Terminal status bar and navigation">
-      {/* Desktop Bar */}
+    <header className={styles.statusBar}>
       <div className={styles.container}>
-        <div className={styles.leftGroup}>
-          <span className={styles.wmBadge}>MANJARO</span>
-          <div className={styles.workspaces}>
-            {sections.map((sec) => {
-              const isActive = sec.id === activeSection;
-              return (
-                <button
-                  key={sec.id}
-                  type="button"
-                  className={`${styles.wsButton} ${isActive ? styles.wsActive : ''}`}
-                  onClick={() => handleSelect(sec.id)}
-                  aria-current={isActive ? 'location' : undefined}
-                >
-                  {sec.label}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+        <a className={styles.identity} href="#home" onClick={() => handleSelect('home')} aria-label="Adiel Emilson, overview">
+          <span className={styles.name}>Adiel Emilson</span>
+        </a>
 
-        {/* Mobile current section indicator */}
-        <div className={styles.mobileCurrent}>
-          <span className={styles.mobilePath}>~/portfolio/{activeSection}</span>
-        </div>
+        <nav className={styles.navigation} aria-label="Main navigation">
+          {sections.filter((section) => section.id !== 'home').map((section) => {
+            const isActive = section.id === activeSection;
+            return (
+              <button
+                key={section.id}
+                type="button"
+                className={`${styles.navItem} ${isActive ? styles.navItemActive : ''}`}
+                onClick={() => handleSelect(section.id)}
+                aria-current={isActive ? 'location' : undefined}
+              >
+                <span>{section.id === 'projects' ? 'Projects' : section.label}</span>
+              </button>
+            );
+          })}
+        </nav>
 
-        <div className={styles.rightGroup}>
-          <button
-            type="button"
-            className={styles.shellButton}
-            onClick={onOpenShell}
-            title="Open Interactive Shell (Ctrl+K or /)"
-          >
-            <span className={styles.shellGlyph}>❯_</span>
-            <span className={styles.shellLabel}>shell</span>
-            <kbd className={styles.hotkey}>⌘K</kbd>
+        <div className={styles.actions}>
+          <button type="button" className={styles.searchButton} onClick={onOpenShell} aria-label="Open search and actions (Command K)">
+            <SearchIcon size={16} />
+            <kbd><CommandIcon size={12} />K</kbd>
           </button>
-
-          <span className={styles.clock}>{time}</span>
-
-          {/* Mobile hamburger for workspaces */}
+          <button type="button" className={styles.themeButton} onClick={onToggleTheme} aria-label={themeAction} title={themeAction}>
+            <ThemeIcon size={17} />
+          </button>
           <button
             type="button"
-            className={styles.mobileMenuBtn}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle workspaces menu"
+            className={styles.menuButton}
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
-            ☰
+            {mobileMenuOpen ? <CloseIcon size={19} /> : <MenuIcon size={19} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className={styles.mobileDrawer}>
-          <div className={styles.mobileDrawerHeader}>
-            <span>Workspaces</span>
-            <button
-              type="button"
-              className={styles.closeBtn}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              ✕
-            </button>
-          </div>
-          <div className={styles.mobileWsList}>
-            {sections.map((sec) => (
+        <nav className={styles.mobileDrawer} id="mobile-navigation" aria-label="Mobile navigation">
+          {sections.filter((section) => section.id !== 'home').map((section) => {
+            const isActive = section.id === activeSection;
+            return (
               <button
-                key={sec.id}
+                key={section.id}
                 type="button"
-                className={`${styles.mobileWsItem} ${sec.id === activeSection ? styles.mobileWsItemActive : ''}`}
-                onClick={() => handleSelect(sec.id)}
+                className={`${styles.drawerItem} ${isActive ? styles.drawerItemActive : ''}`}
+                onClick={() => handleSelect(section.id)}
+                aria-current={isActive ? 'location' : undefined}
               >
-                <span>{sec.label}</span>
-                <span className={styles.mobileWsTitle}># {sec.title}</span>
+                <span>{section.id === 'projects' ? 'Projects' : section.label}</span>
               </button>
-            ))}
-          </div>
-        </div>
+            );
+          })}
+        </nav>
       )}
-    </nav>
+    </header>
   );
 }

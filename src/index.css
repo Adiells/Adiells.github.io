@@ -1,104 +1,94 @@
-/* Reset & Base Terminal Styling */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
-  font-size: 16px;
+  min-width: 320px;
   scroll-behavior: smooth;
-  background-color: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-mono);
   scroll-padding-top: calc(var(--bar-h) + 1rem);
-  overflow-x: hidden;
-  max-width: 100vw;
+  background: var(--bg-canvas);
+  color: var(--fg-primary);
+  font-family: var(--font-sans);
+  overflow-x: clip;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--fg);
-  font-family: var(--font-mono);
-  font-size: var(--fs-base);
-  line-height: var(--lh-code);
+  min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-canvas);
+  background-image:
+    linear-gradient(to right, transparent calc(100% - 1px), color-mix(in srgb, var(--border-hairline) 38%, transparent) 100%),
+    linear-gradient(to bottom, transparent calc(100% - 1px), color-mix(in srgb, var(--border-hairline) 24%, transparent) 100%);
+  background-size: 80px 80px;
+  background-position: center top;
+  color: var(--fg-primary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-prose);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(189, 147, 249, 0.05) 0%, transparent 60%),
-    radial-gradient(circle at 100% 100%, rgba(139, 233, 253, 0.03) 0%, transparent 50%);
-  background-attachment: fixed;
-  overflow-x: hidden;
-  max-width: 100vw;
+  overflow-x: clip;
 }
 
 ::selection {
-  background: var(--purple);
-  color: var(--bg-darker);
+  background: var(--accent-primary);
+  color: var(--bg-canvas);
 }
 
-::-moz-selection {
-  background: var(--purple);
-  color: var(--bg-darker);
-}
-
-/* Custom Minimal Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-canvas);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--line);
+  background: var(--border-strong);
   border-radius: var(--radius-sm);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--comment);
+  background: var(--fg-muted);
 }
 
-/* Base interactive elements */
 a {
   color: inherit;
   text-decoration: none;
 }
 
 button {
+  border: 0;
   background: none;
-  border: none;
-  font-family: inherit;
-  font-size: inherit;
   color: inherit;
   cursor: pointer;
+  font: inherit;
 }
 
 :focus-visible {
-  outline: 2px solid var(--purple);
-  outline-offset: 2px;
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
 }
 
-/* Central Page Layout Wrapper */
 .main-layout {
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: clamp(1.25rem, 4vw, 2.25rem) clamp(0.75rem, 3.5vw, 1.25rem);
-  box-sizing: border-box;
+  max-width: var(--max-w);
   min-width: 0;
+  margin-inline: auto;
+  padding: clamp(1.25rem, 4vw, 2.25rem) clamp(0.75rem, 3.5vw, 1.25rem);
+  padding-top: clamp(0.75rem, 1.5vw, 1rem);
 }
 
 @media (prefers-reduced-motion: reduce) {
   *,
-  ::before,
-  ::after {
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }

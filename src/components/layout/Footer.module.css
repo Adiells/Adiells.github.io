@@ -1,53 +1,14 @@
-.footer {
-  margin-top: var(--space-section);
-  padding: 3rem 1rem 4rem;
-  background: var(--bg-darker);
-  border-top: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
-  color: var(--comment);
-}
-
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.exitLine {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.user {
-  color: var(--purple);
-}
-
-.arrow {
-  color: var(--green);
-  font-weight: 700;
-}
-
-.cmd {
-  color: var(--fg);
-}
-
-.statusLine {
-  color: var(--green);
-}
-
-.metaLine {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--comment);
-  margin-top: 0.5rem;
-}
-
-.separator {
-  opacity: 0.5;
-}
+.footer { margin-top: var(--space-section); padding: 2rem max(1rem, calc((100vw - var(--max-w)) / 2)) 2.5rem; border-top: 1px solid var(--border-hairline); color: var(--fg-secondary); }
+.container { display: grid; grid-template-columns: 1fr auto; gap: 1.5rem 2rem; align-items: start; max-width: var(--max-w); margin: 0 auto; }
+.identity { display: flex; flex-direction: column; align-items: flex-start; gap: .3rem; }
+.name { color: var(--fg-primary); font: 600 1rem/1.3 var(--font-display); text-decoration: none; }
+.identity > span, .affiliation { color: var(--fg-muted); font: 400 .72rem/1.5 var(--font-mono); }
+.affiliation { text-decoration: none; }
+.affiliation:hover { color: var(--accent-primary); }
+.affiliation span { color: var(--fg-secondary); margin-left: .35rem; }
+.navigation { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .5rem 1.1rem; }
+.navigation a { color: var(--fg-secondary); font: 400 var(--fs-xs)/1.5 var(--font-sans); text-decoration: none; }
+.navigation a:hover { color: var(--accent-primary); }
+.copyright { display: flex; flex-wrap: wrap; gap: .4rem 1rem; grid-column: 1 / -1; padding-top: .9rem; border-top: 1px solid var(--border-hairline); color: var(--fg-muted); font: 400 .68rem/1.5 var(--font-mono); }
+:where(.footer) a:focus-visible { outline: 2px solid var(--accent-signal); outline-offset: 3px; }
+@media (max-width: 560px) { .container { grid-template-columns: 1fr; } .navigation { justify-content: flex-start; } .copyright { grid-column: auto; } }

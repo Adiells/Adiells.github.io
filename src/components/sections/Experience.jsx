@@ -1,64 +1,26 @@
 import React from 'react';
-import { SectionHeader } from '../ui/SectionHeader.jsx';
-import { Tag } from '../ui/Tag.jsx';
 import styles from './Experience.module.css';
 
-export function Experience({ experiences, user = 'adiel', host = 'manjaro-linux' }) {
+export function Experience({ experiences = [] }) {
   const asset = (fileName) => `${import.meta.env.BASE_URL}${fileName}`;
-
-  return (
-    <section className={styles.experience} id="experience" aria-label="Experience & Research Labs Section">
-      <SectionHeader
-        id="experience"
-        command="journalctl -u career --reverse"
-        comment="academic research leagues, labs & collaborations"
-        user={user}
-        host={host}
-      />
-
-      <div className={styles.logContainer}>
-        <div className={styles.logHeader}>
-          <span className={styles.logMeta}>-- Logs begin at 2025-06-01, entries: {experiences.length} --</span>
+  return <section className={styles.experience} id="experience" aria-labelledby="experience-title">
+    <header className={styles.sectionHeader}><span>03 // RESEARCH LABS &amp; ACADEMIC LEAGUES</span><h2 id="experience-title">Research index</h2></header>
+    <div className={styles.index}>
+      {experiences.map((exp, index) => <article className={styles.entry} key={exp.id || exp.title}>
+        <div className={styles.identity}>
+          <span className={styles.period}>{exp.date}</span>
+          <span className={styles.domain}>{exp.domain}</span>
+          <div className={styles.logoFrame}><img src={asset(exp.image)} alt={`${exp.title} logo`} className={styles.logo} loading="lazy" /></div>
         </div>
-
-        <div className={styles.timeline}>
-          {experiences.map((exp) => (
-            <article key={exp.title} className={styles.entry}>
-              <div className={styles.entrySidebar}>
-                <span className={styles.dateStamp}>{exp.date}</span>
-                {exp.image && (
-                  <div className={styles.logoWrapper}>
-                    <img
-                      src={asset(exp.image)}
-                      alt={exp.title}
-                      className={styles.labLogo}
-                      loading="lazy"
-                    />
-                  </div>
-                )}
-              </div>
-
-              <div className={styles.entryMain}>
-                <div className={styles.entryTitleRow}>
-                  <div className={styles.titleGroup}>
-                    <span className={styles.unitName}>{exp.title}</span>
-                    <span className={styles.unitSubtitle}>({exp.subtitle})</span>
-                  </div>
-                  <span className={styles.roleBadge}>[{exp.role}]</span>
-                </div>
-
-                <p className={styles.description}>{exp.description}</p>
-
-                <div className={styles.tagsRow}>
-                  {exp.tags.map((tag) => (
-                    <Tag key={tag} label={tag} prefix="#" />
-                  ))}
-                </div>
-              </div>
-            </article>
-          ))}
+        <div className={styles.details}>
+          <span className={styles.entryNumber}>RESEARCH GROUP / 0{index + 1}</span>
+          <h3>{exp.title}</h3>
+          <p className={styles.subtitle}>{exp.subtitle}</p>
+          <span className={styles.role}>{exp.role}</span>
+          <p className={styles.description}>{exp.description}</p>
         </div>
-      </div>
-    </section>
-  );
+        <ul className={styles.tags} aria-label={`${exp.title} research areas`}>{exp.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
+      </article>)}
+    </div>
+  </section>;
 }

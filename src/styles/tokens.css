@@ -1,41 +1,71 @@
 :root {
-  /* Dracula Theme Palette */
-  --bg: #282a36;
-  --bg-dark: #21222c;
-  --bg-darker: #191a21;
-  --bg-glass: rgba(40, 42, 54, 0.85);
-  --line: #44475a;
-  --line-light: #6272a4;
-  
-  --fg: #f8f8f2;
-  --comment: #6272a4;
-  
-  --cyan: #8be9fd;
-  --green: #50fa7b;
-  --orange: #ffb86c;
-  --pink: #ff79c6;
-  --purple: #bd93f9;
-  --red: #ff5555;
-  --yellow: #f1fa8c;
+  color-scheme: dark;
 
-  /* Typography & Sizing */
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  /* Dark Mineral */
+  --bg-canvas: #0B0D11;
+  --bg-surface: #12161D;
+  --bg-elevated: #181D26;
+  --bg-glass: rgb(18 22 29 / 88%);
+  --fg-primary: #EDEFF2;
+  --fg-secondary: #949EAA;
+  --fg-muted: #5E6875;
+  --accent-primary: #3B82F6;
+  --accent-signal: #F59E0B;
+  --border-hairline: #222936;
+  --border-strong: #333D4F;
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
   --fs-xs: 0.75rem;
-  --fs-sm: 0.8125rem;
-  --fs-base: 0.875rem;
-  --fs-md: 1rem;
-  --fs-lg: 1.125rem;
-  --fs-xl: 1.35rem;
-  --fs-2xl: 1.75rem;
-  
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 1.875rem;
+  --fs-3xl: 2.25rem;
+
   --lh-code: 1.5;
-  --lh-prose: 1.7;
-  --measure: 72ch;
-  
+  --lh-prose: 1.65;
+  --measure: 65ch;
+  --bar-h: 56px;
+  --max-w: 1160px;
   --radius-sm: 4px;
-  --radius: 8px;
-  --radius-lg: 12px;
-  
-  --bar-h: 42px;
+  --radius: 6px;
+  --radius-lg: 8px;
   --space-section: clamp(3.5rem, 7vw, 6rem);
+
+  /* Transition aliases for existing modules */
+  --bg: var(--bg-canvas);
+  --bg-dark: var(--bg-surface);
+  --bg-darker: var(--bg-elevated);
+  --fg: var(--fg-primary);
+  --comment: var(--fg-muted);
+  --line: var(--border-hairline);
+  --line-light: var(--border-strong);
+  --purple: var(--accent-primary);
+  --cyan: var(--accent-primary);
+  --green: var(--accent-signal);
+  --orange: var(--accent-signal);
+  --pink: var(--accent-primary);
+  --red: var(--accent-signal);
+  --yellow: var(--accent-signal);
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+
+  --bg-canvas: #F2F4F7;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #E8ECF2;
+  --bg-glass: rgb(255 255 255 / 90%);
+  --fg-primary: #0F141C;
+  --fg-secondary: #4A5568;
+  --fg-muted: #718096;
+  --accent-primary: #1D4ED8;
+  --accent-signal: #D97706;
+  --border-hairline: #D5DCE6;
+  --border-strong: #94A3B8;
 }
