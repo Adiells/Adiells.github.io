@@ -2,23 +2,31 @@
 
 > Student and researcher in Data Science & Artificial Intelligence at UFPB (Federal University of Paraíba). Researching deep learning architectures, audio DSP, computer vision, and high-performance C++/Python systems.
 
+Full documentation and complete context: https://adiels.me/llms-full.txt
+
 ## Summary
-- **Full Name**: Adiel Emilson
+
+- **Name**: Adiel Emilson (Adiells)
+- **Role**: Data Science & Artificial Intelligence Student and Researcher
+- **Institution**: Universidade Federal da Paraíba (UFPB), João Pessoa, Brazil
+- **Academic Degree**: B.S. in Data Science & Artificial Intelligence (in progress)
+- **Affiliations**: TAIL (Technology and Artificial Intelligence League), Cortechx League, LASER Lab
 - **Website**: https://adiels.me/
-- **Location**: João Pessoa, Paraíba, Brazil
-- **Affiliations**: UFPB (Universidade Federal da Paraíba), TAIL (Technology and Artificial Intelligence League), Cortechx League, LASER Lab
-- **Email**: adielenilson@gmail.com
 - **GitHub**: https://github.com/adiells
 - **LinkedIn**: https://linkedin.com/in/adielemilson
+- **Email**: adielenilson@gmail.com
 
 ## Core Focus Areas
-- Deep Learning & Audio DSP (PyTorch, STFT, Spectral Audio Processing)
-- Computer Vision & Robotics (YOLO, OpenCV, ROS, Autonomous Control)
-- High-Performance C++ & Python Systems (pybind11, Native Computational Kernels, Similarity & Matrix Kernels)
-- Data Engineering & Interactive Systems (Analytical Pipelines, React, Vite)
+
+- **Deep Learning & Audio DSP**: PyTorch neural networks, STFT, spectral audio processing, neural stem separation.
+- **Computer Vision & Robotics**: Real-time object detection (YOLO), OpenCV, ROS (Robot Operating System), autonomous control.
+- **High-Performance C++ & Python**: C++17 compute kernels, pybind11 interoperability, vector similarity, native matrix operations.
+- **Data Engineering & Interactive Systems**: Statistical analysis, analytical data pipelines, React, Three.js 3D web previewers.
 
 ## Key Projects
-- **Music2Chart**: Deep learning and DSP system mapping audio spectral features to rhythmic gameplay charts.
-- **Snake AI & Neuroevolution**: Genetic algorithms and neural controllers trained for spatial navigation and decision-making.
-- **High-Performance Vector Recommendation Kernel**: C++17 compute engine with pybind11 integration for sub-millisecond similarity scoring.
-- **Autonomous Robotic Vehicle Perception**: ROS-integrated visual tracking and obstacle avoidance pipelines for mobile robots.
+
+- [Music2Chart](https://music2chart.adiels.me/): Automated high-fidelity audio-to-chart workstation for Clone Hero and YARG. Translates audio into tournament-grade `.chart` and `.sng` packages with real-time 3D Highway visualization.
+- [GitHub Profile (Adiells)](https://github.com/adiells): Open-source repositories and research implementations.
+- [Snake AI & Neuroevolution](https://github.com/adiells): Genetic algorithms and neural controllers trained for spatial navigation and real-time decision-making.
+- [High-Performance Vector Recommendation Kernel](https://github.com/adiells): Native C++17 compute engine with pybind11 integration for sub-millisecond similarity scoring.
+- [Autonomous Robotic Perception](https://github.com/adiells): ROS-integrated visual tracking and obstacle avoidance pipeline for mobile robotics.
