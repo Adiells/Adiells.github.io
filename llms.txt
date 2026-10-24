@@ -1,0 +1,24 @@
+# Adiel Emilson
+
+> Student and researcher in Data Science & Artificial Intelligence at UFPB (Federal University of Paraíba). Researching deep learning architectures, audio DSP, computer vision, and high-performance C++/Python systems.
+
+## Summary
+- **Full Name**: Adiel Emilson
+- **Website**: https://adiels.me/
+- **Location**: João Pessoa, Paraíba, Brazil
+- **Affiliations**: UFPB (Universidade Federal da Paraíba), TAIL (Technology and Artificial Intelligence League), Cortechx League, LASER Lab
+- **Email**: adielenilson@gmail.com
+- **GitHub**: https://github.com/adiells
+- **LinkedIn**: https://linkedin.com/in/adielemilson
+
+## Core Focus Areas
+- Deep Learning & Audio DSP (PyTorch, STFT, Spectral Audio Processing)
+- Computer Vision & Robotics (YOLO, OpenCV, ROS, Autonomous Control)
+- High-Performance C++ & Python Systems (pybind11, Native Computational Kernels, Similarity & Matrix Kernels)
+- Data Engineering & Interactive Systems (Analytical Pipelines, React, Vite)
+
+## Key Projects
+- **Music2Chart**: Deep learning and DSP system mapping audio spectral features to rhythmic gameplay charts.
+- **Snake AI & Neuroevolution**: Genetic algorithms and neural controllers trained for spatial navigation and decision-making.
+- **High-Performance Vector Recommendation Kernel**: C++17 compute engine with pybind11 integration for sub-millisecond similarity scoring.
+- **Autonomous Robotic Vehicle Perception**: ROS-integrated visual tracking and obstacle avoidance pipelines for mobile robots.
