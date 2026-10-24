@@ -1,0 +1,4 @@
+Contact: mailto:adielenilson@gmail.com
+Preferred-Languages: en, pt-br
+Canonical: https://adiels.me/.well-known/security.txt
+Policy: https://github.com/adiells
