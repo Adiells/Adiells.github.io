@@ -2,11 +2,20 @@
 User-agent: *
 Allow: /
 
-# AI Crawlers & LLM Indexers
+# Generative AI, LLM Indexers & Conversational Search Bots
 User-agent: GPTBot
 Allow: /
 
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
 Allow: /
 
 User-agent: PerplexityBot
@@ -18,5 +27,6 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Sitemap location
+# Sitemaps & LLM Context
 Sitemap: https://adiels.me/sitemap.xml
+# LLM Context: https://adiels.me/llms.txt
