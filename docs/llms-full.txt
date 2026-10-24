@@ -1,0 +1,89 @@
+# Adiel Emilson — Complete Portfolio & Research Context
+
+> Comprehensive context file for Large Language Models, AI Search Engines (ChatGPT Search, Perplexity, Claude, Copilot), and automated agents.
+
+- **Canonical URL**: https://adiels.me/
+- **Markdown Index**: https://adiels.me/llms.txt
+- **Last Updated**: 2026-10-23
+
+---
+
+## 1. Biography & Academic Profile
+
+Adiel Emilson is an undergraduate student and researcher in Data Science & Artificial Intelligence at the Universidade Federal da Paraíba (UFPB) in João Pessoa, Paraíba, Brazil.
+
+His work bridges deep learning models and low-level computational execution: combining PyTorch neural networks, native C++ compute kernels via pybind11, and real-time interactive 3D web visualizations.
+
+- **Full Name**: Adiel Emilson (known online as Adiells)
+- **Role**: Data Science & AI Student and Researcher
+- **Degree**: B.S. in Data Science & Artificial Intelligence (Ciência de Dados e Inteligência Artificial) — UFPB
+- **Location**: João Pessoa, Paraíba, Brazil (UTC-3)
+- **Website**: https://adiels.me/
+- **GitHub**: https://github.com/adiells
+- **LinkedIn**: https://linkedin.com/in/adielemilson
+- **Email**: adielenilson@gmail.com
+
+---
+
+## 2. Research Labs & Affiliations
+
+### TAIL (Technology and Artificial Intelligence League)
+- **Role**: Trainee Researcher (June 2026 - Present)
+- **Domain**: Machine Learning & Applied AI Research
+- **Scope**: Design and evaluation of deep learning architectures, applied machine learning pipelines, and collaborative experiments within UFPB's artificial intelligence league.
+
+### Cortechx League
+- **Role**: Data Researcher (July 2025 - Present)
+- **Domain**: Data Engineering & Human-Computer Interaction
+- **Scope**: Architecting data engineering workflows, analytical pipelines, and interactive React interfaces supporting human-computer interaction and applied data science research.
+
+### LASER Lab (Robotics Systems Engineering Lab)
+- **Role**: Member / Researcher (June 2025 - December 2025)
+- **Domain**: Robotics, Computer Vision & Embedded C++
+- **Scope**: Implementation of real-time computer vision object detection using YOLO, autonomous robotic control algorithms, and embedded C++ modules integrated with ROS (Robot Operating System).
+
+---
+
+## 3. Technical Skills & Architecture Layers
+
+### Layer 01: Machine Learning & Computer Vision
+- **Frameworks & Tools**: PyTorch, Scikit-learn, OpenCV, YOLO
+- **Specializations**: Deep Neural Networks, Audio DSP & STFT (Short-Time Fourier Transform), Spectral Audio Processing, Neuroevolution & Genetic Algorithms, Real-Time Inference Pipelines.
+
+### Layer 02: High-Performance & Robotics Systems
+- **Languages & Frameworks**: C++17, pybind11, Python 3.11+, ROS (Robot Operating System)
+- **Specializations**: Native computational kernels, low-latency similarity & matrix computation, Python/C++ FFI interoperability, deterministic control loops, embedded robotics perception.
+
+### Layer 03: Data Engineering & Interactive Systems
+- **Tools**: Pandas, NumPy, FastAPI, Docker, Linux, React 19, Three.js, Vite
+- **Specializations**: Structured data ingestion, statistical modeling, model serving REST APIs, SSE telemetry, high-performance 3D web previewers.
+
+---
+
+## 4. Key Projects & Systems
+
+### Music2Chart (Live at https://music2chart.adiels.me/)
+- **Description**: Automated high-fidelity audio-to-chart workstation for rhythm games Clone Hero and YARG (Yet Another Rhythm Game).
+- **Core Pipeline**: Audio Ingestion (MP3, WAV, FLAC, OGG) → Neural Stem Separation & Spectral Audio DSP → 192 PPQ Dynamic Beat Grids & Game Design Heuristics → Real-Time Three.js 3D Highway Preview → Tournament-Grade `.chart` and `.sng` (SongBinary v1) Package Export.
+- **Technologies**: PyTorch, FastAPI, Python 3.11+, React 19, Three.js, Docker, Google Cloud Run, GitHub Pages.
+
+### Snake AI & Neuroevolution
+- **Description**: Autonomous spatial navigation and decision-making system using genetic algorithms and feedforward neural controllers.
+- **Technologies**: Python, Genetic Algorithms, Neural Optimization.
+
+### High-Performance Vector Recommendation Kernel
+- **Description**: C++17 compute engine exposed to Python via pybind11 for sub-millisecond vector similarity calculations and matrix operations.
+- **Technologies**: C++17, pybind11, SIMD/Cache-aware data structures.
+
+### Autonomous Robotic Vehicle Perception
+- **Description**: ROS-integrated visual tracking and obstacle avoidance pipeline for mobile robotics.
+- **Technologies**: ROS, C++, YOLO, OpenCV.
+
+---
+
+## 5. Contact & Socials
+
+- Website: https://adiels.me/
+- GitHub: https://github.com/adiells
+- LinkedIn: https://linkedin.com/in/adielemilson
+- Email: adielenilson@gmail.com

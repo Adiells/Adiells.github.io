@@ -25,7 +25,7 @@ Full documentation and complete context: https://adiels.me/llms-full.txt
 
 ## Key Projects
 
-- [Music2Chart](https://music2chart.adiels.me/): Automated high-fidelity audio-to-chart workstation for Clone Hero and YARG. Translates audio into tournament-grade `.chart` and `.sng` packages with real-time 3D Highway visualization.
+- [Music2Chart](https://music2chart.adiels.me/): AI-powered web tool to convert audio tracks (MP3, WAV, FLAC) into Clone Hero and YARG charts with real-time in-browser 3D Highway preview. Generates tournament-grade `.chart` and `.sng` packages.
 - [GitHub Profile (Adiells)](https://github.com/adiells): Open-source repositories and research implementations.
 - [Snake AI & Neuroevolution](https://github.com/adiells): Genetic algorithms and neural controllers trained for spatial navigation and real-time decision-making.
 - [High-Performance Vector Recommendation Kernel](https://github.com/adiells): Native C++17 compute engine with pybind11 integration for sub-millisecond similarity scoring.
