@@ -38,12 +38,28 @@ export function Hero({ profile, onNavigate }) {
   return (
     <section className={styles.hero} id="home" aria-labelledby="hero-title">
       <div className={styles.introCol}>
-        <p className={styles.eyebrow}>
-          <span className={styles.statusDot} aria-hidden="true" />
-          <span>Adiel Emilson · Data Science &amp; AI @ UFPB</span>
-        </p>
+        <div className={styles.identity}>
+          <span className={styles.avatarWrap}>
+            <img
+              src={asset(profile.photo || 'eu.webp')}
+              alt=""
+              aria-hidden="true"
+              className={styles.eyebrowAvatar}
+              width="72"
+              height="72"
+            />
+            <span className={styles.avatarBadge} aria-hidden="true" />
+          </span>
+          <div className={styles.identityText}>
+            <h1 className={styles.name} id="hero-title">{profile.name || 'Adiel Emilson'}</h1>
+            <p className={styles.eyebrow}>
+              <span className={styles.statusDot} aria-hidden="true" />
+              <span>Data Science &amp; AI @ UFPB</span>
+            </p>
+          </div>
+        </div>
 
-        <h1 className={styles.headline} id="hero-title">{renderHeadline(profile.tagline, styles)}</h1>
+        <p className={styles.headline}>{renderHeadline(profile.tagline, styles)}</p>
 
         <p className={styles.bio}>{profile.bio?.[0]}</p>
 
