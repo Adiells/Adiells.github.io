@@ -12,16 +12,17 @@ PUBLIC_DIR = REPO_ROOT / "public"
 
 
 def render_master(dim: int = 1024) -> Image.Image:
-    """Render high-resolution master icon with solid dark background."""
+    """Render high-resolution master icon with solid pure black background."""
     logo = Image.open(PUBLIC_DIR / "white-logo.png")
     bbox = logo.getbbox()
     logo_crop = logo.crop(bbox)
 
-    master = Image.new("RGB", (dim, dim), (11, 13, 17))  # #0B0D11
+    master = Image.new("RGB", (dim, dim), (0, 0, 0))  # Pure black #000000
     draw = ImageDraw.Draw(master)
-    draw.rectangle([0, 0, dim - 1, dim - 1], outline=(35, 39, 48), width=max(1, int(dim / 48)))
+    # Subtle border for dark-mode tabs
+    draw.rectangle([0, 0, dim - 1, dim - 1], outline=(45, 45, 45), width=max(1, int(dim / 48)))
 
-    target_w = int(dim * 0.64)
+    target_w = int(dim * 0.65)
     target_h = int(logo_crop.height * (target_w / logo_crop.width))
     logo_resized = logo_crop.resize((target_w, target_h), Image.Resampling.LANCZOS)
 
@@ -34,6 +35,15 @@ def render_master(dim: int = 1024) -> Image.Image:
 def main() -> None:
     PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
     master = render_master(1024)
+
+    # Save master logo.png on black background
+    master.save(PUBLIC_DIR / "logo.png", format="PNG", optimize=True)
+
+    # Save black-logo.png (black A on transparent) for light backgrounds
+    logo = Image.open(PUBLIC_DIR / "white-logo.png")
+    black_logo = Image.new("RGBA", logo.size, (0, 0, 0, 0))
+    black_logo.putalpha(logo.split()[-1])
+    black_logo.save(PUBLIC_DIR / "black-logo.png", format="PNG", optimize=True)
 
     sizes = {
         "favicon-48x48.png": 48,
@@ -54,13 +64,13 @@ def main() -> None:
     master_48.save(ico_path, format="ICO", sizes=[(16, 16), (32, 32), (48, 48)])
     print("Saved favicon.ico")
 
-    # Clean SVG with solid background
+    # Clean SVG with pure black background
     img512 = master.resize((512, 512), Image.Resampling.LANCZOS)
     buf = io.BytesIO()
     img512.save(buf, format="PNG", optimize=True)
     b64_str = base64.b64encode(buf.getvalue()).decode("ascii")
     svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 512 512">
-  <rect width="512" height="512" fill="#0B0D11"/>
+  <rect width="512" height="512" fill="#000000"/>
   <image width="512" height="512" href="data:image/png;base64,{b64_str}"/>
 </svg>
 """
